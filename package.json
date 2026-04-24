@@ -1,0 +1,26 @@
+{
+  "name": "celo-dice-roll-subgraph",
+  "version": "1.0.0",
+  "description": "The Graph subgraph for DiceRollV2 on Celo",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ celo-dice-roll-subgraph",
+    "create-local": "graph create --node http://localhost:8020/ celo-dice-roll-subgraph",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 celo-dice-roll-subgraph"
+  },
+  "keywords": [
+    "celo",
+    "thegraph",
+    "subgraph",
+    "dice-roll",
+    "blockchain",
+    "indexer"
+  ],
+  "author": "brventonbeshers-ship-it",
+  "license": "MIT",
+  "devDependencies": {
+    "@graphprotocol/graph-cli": "^0.71.0",
+    "@graphprotocol/graph-ts": "^0.35.0"
+  }
+}
