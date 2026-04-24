@@ -1,0 +1,34 @@
+type DiceRoll @entity(immutable: true) {
+  id: Bytes!
+  player: Bytes!
+  guess: BigInt!
+  result: BigInt!
+  win: Boolean!
+  blockNumber: BigInt!
+  timestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type UserStats @entity {
+  id: Bytes!
+  rolls: BigInt!
+  wins: BigInt!
+  lastRoll: BigInt!
+  lastResult: BigInt!
+  winRate: BigDecimal!
+}
+
+type DailyStats @entity {
+  id: String!
+  date: String!
+  rolls: BigInt!
+  wins: BigInt!
+  uniquePlayers: BigInt!
+}
+
+type GlobalStats @entity {
+  id: String!
+  totalRolls: BigInt!
+  totalWins: BigInt!
+  totalPlayers: BigInt!
+}
