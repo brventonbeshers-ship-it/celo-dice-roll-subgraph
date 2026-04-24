@@ -1,0 +1,28 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: DiceRollV2
+    network: celo
+    source:
+      address: "0x0000000000000000000000000000000000000000"
+      abi: DiceRollV2
+      startBlock: 25000000
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.9
+      language: wasm/assemblyscript
+      entities:
+        - DiceRoll
+        - UserStats
+        - DailyStats
+      abis:
+        - name: DiceRollV2
+          file: ./abis/DiceRollV2.json
+      eventHandlers:
+        - event: DiceRolled(indexed address,uint256,uint256,bool)
+          handler: handleDiceRolled
+      file: ./src/mapping.ts
